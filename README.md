@@ -1,2 +1,1 @@
-# FinatlonBackend
-Backend
+Finatlon mobile app repo
