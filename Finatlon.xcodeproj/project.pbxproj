@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		755B67082945C26000356FAE /* FinatlonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B67072945C26000356FAE /* FinatlonApp.swift */; };
+		755B670A2945C26000356FAE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B67092945C26000356FAE /* ContentView.swift */; };
+		755B670C2945C26100356FAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 755B670B2945C26100356FAE /* Assets.xcassets */; };
+		755B670F2945C26100356FAE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 755B670E2945C26100356FAE /* Preview Assets.xcassets */; };
+		755B67192945C26100356FAE /* FinatlonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B67182945C26100356FAE /* FinatlonTests.swift */; };
+		755B67232945C26100356FAE /* FinatlonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B67222945C26100356FAE /* FinatlonUITests.swift */; };
+		755B67252945C26100356FAE /* FinatlonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B67242945C26100356FAE /* FinatlonUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		755B67152945C26100356FAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 755B66FC2945C26000356FAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 755B67032945C26000356FAE;
+			remoteInfo = Finatlon;
+		};
+		755B671F2945C26100356FAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 755B66FC2945C26000356FAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 755B67032945C26000356FAE;
+			remoteInfo = Finatlon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		755B67042945C26000356FAE /* Finatlon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finatlon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		755B67072945C26000356FAE /* FinatlonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinatlonApp.swift; sourceTree = "<group>"; };
+		755B67092945C26000356FAE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		755B670B2945C26100356FAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		755B670E2945C26100356FAE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		755B67142945C26100356FAE /* FinatlonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinatlonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		755B67182945C26100356FAE /* FinatlonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinatlonTests.swift; sourceTree = "<group>"; };
+		755B671E2945C26100356FAE /* FinatlonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinatlonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		755B67222945C26100356FAE /* FinatlonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinatlonUITests.swift; sourceTree = "<group>"; };
+		755B67242945C26100356FAE /* FinatlonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinatlonUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		755B67012945C26000356FAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		755B67112945C26100356FAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		755B671B2945C26100356FAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		755B66FB2945C26000356FAE = {
+			isa = PBXGroup;
+			children = (
+				755B67062945C26000356FAE /* Finatlon */,
+				755B67172945C26100356FAE /* FinatlonTests */,
+				755B67212945C26100356FAE /* FinatlonUITests */,
+				755B67052945C26000356FAE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		755B67052945C26000356FAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				755B67042945C26000356FAE /* Finatlon.app */,
+				755B67142945C26100356FAE /* FinatlonTests.xctest */,
+				755B671E2945C26100356FAE /* FinatlonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		755B67062945C26000356FAE /* Finatlon */ = {
+			isa = PBXGroup;
+			children = (
+				755B67072945C26000356FAE /* FinatlonApp.swift */,
+				755B67092945C26000356FAE /* ContentView.swift */,
+				755B670B2945C26100356FAE /* Assets.xcassets */,
+				755B670D2945C26100356FAE /* Preview Content */,
+			);
+			path = Finatlon;
+			sourceTree = "<group>";
+		};
+		755B670D2945C26100356FAE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				755B670E2945C26100356FAE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		755B67172945C26100356FAE /* FinatlonTests */ = {
+			isa = PBXGroup;
+			children = (
+				755B67182945C26100356FAE /* FinatlonTests.swift */,
+			);
+			path = FinatlonTests;
+			sourceTree = "<group>";
+		};
+		755B67212945C26100356FAE /* FinatlonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				755B67222945C26100356FAE /* FinatlonUITests.swift */,
+				755B67242945C26100356FAE /* FinatlonUITestsLaunchTests.swift */,
+			);
+			path = FinatlonUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		755B67032945C26000356FAE /* Finatlon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 755B67282945C26100356FAE /* Build configuration list for PBXNativeTarget "Finatlon" */;
+			buildPhases = (
+				755B67002945C26000356FAE /* Sources */,
+				755B67012945C26000356FAE /* Frameworks */,
+				755B67022945C26000356FAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Finatlon;
+			productName = Finatlon;
+			productReference = 755B67042945C26000356FAE /* Finatlon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		755B67132945C26100356FAE /* FinatlonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 755B672B2945C26100356FAE /* Build configuration list for PBXNativeTarget "FinatlonTests" */;
+			buildPhases = (
+				755B67102945C26100356FAE /* Sources */,
+				755B67112945C26100356FAE /* Frameworks */,
+				755B67122945C26100356FAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				755B67162945C26100356FAE /* PBXTargetDependency */,
+			);
+			name = FinatlonTests;
+			productName = FinatlonTests;
+			productReference = 755B67142945C26100356FAE /* FinatlonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		755B671D2945C26100356FAE /* FinatlonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 755B672E2945C26100356FAE /* Build configuration list for PBXNativeTarget "FinatlonUITests" */;
+			buildPhases = (
+				755B671A2945C26100356FAE /* Sources */,
+				755B671B2945C26100356FAE /* Frameworks */,
+				755B671C2945C26100356FAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				755B67202945C26100356FAE /* PBXTargetDependency */,
+			);
+			name = FinatlonUITests;
+			productName = FinatlonUITests;
+			productReference = 755B671E2945C26100356FAE /* FinatlonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		755B66FC2945C26000356FAE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					755B67032945C26000356FAE = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					755B67132945C26100356FAE = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 755B67032945C26000356FAE;
+					};
+					755B671D2945C26100356FAE = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 755B67032945C26000356FAE;
+					};
+				};
+			};
+			buildConfigurationList = 755B66FF2945C26000356FAE /* Build configuration list for PBXProject "Finatlon" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 755B66FB2945C26000356FAE;
+			productRefGroup = 755B67052945C26000356FAE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				755B67032945C26000356FAE /* Finatlon */,
+				755B67132945C26100356FAE /* FinatlonTests */,
+				755B671D2945C26100356FAE /* FinatlonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		755B67022945C26000356FAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				755B670F2945C26100356FAE /* Preview Assets.xcassets in Resources */,
+				755B670C2945C26100356FAE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		755B67122945C26100356FAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		755B671C2945C26100356FAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		755B67002945C26000356FAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				755B670A2945C26000356FAE /* ContentView.swift in Sources */,
+				755B67082945C26000356FAE /* FinatlonApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		755B67102945C26100356FAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				755B67192945C26100356FAE /* FinatlonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		755B671A2945C26100356FAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				755B67252945C26100356FAE /* FinatlonUITestsLaunchTests.swift in Sources */,
+				755B67232945C26100356FAE /* FinatlonUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		755B67162945C26100356FAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 755B67032945C26000356FAE /* Finatlon */;
+			targetProxy = 755B67152945C26100356FAE /* PBXContainerItemProxy */;
+		};
+		755B67202945C26100356FAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 755B67032945C26000356FAE /* Finatlon */;
+			targetProxy = 755B671F2945C26100356FAE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		755B67262945C26100356FAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		755B67272945C26100356FAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		755B67292945C26100356FAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Finatlon/Preview Content\"";
+				DEVELOPMENT_TEAM = PL93HUUR5R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ernokanst.Finatlon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		755B672A2945C26100356FAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Finatlon/Preview Content\"";
+				DEVELOPMENT_TEAM = PL93HUUR5R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ernokanst.Finatlon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		755B672C2945C26100356FAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PL93HUUR5R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ernokanst.FinatlonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Finatlon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Finatlon";
+			};
+			name = Debug;
+		};
+		755B672D2945C26100356FAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PL93HUUR5R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ernokanst.FinatlonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Finatlon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Finatlon";
+			};
+			name = Release;
+		};
+		755B672F2945C26100356FAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PL93HUUR5R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ernokanst.FinatlonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Finatlon;
+			};
+			name = Debug;
+		};
+		755B67302945C26100356FAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PL93HUUR5R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ernokanst.FinatlonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Finatlon;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		755B66FF2945C26000356FAE /* Build configuration list for PBXProject "Finatlon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				755B67262945C26100356FAE /* Debug */,
+				755B67272945C26100356FAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		755B67282945C26100356FAE /* Build configuration list for PBXNativeTarget "Finatlon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				755B67292945C26100356FAE /* Debug */,
+				755B672A2945C26100356FAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		755B672B2945C26100356FAE /* Build configuration list for PBXNativeTarget "FinatlonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				755B672C2945C26100356FAE /* Debug */,
+				755B672D2945C26100356FAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		755B672E2945C26100356FAE /* Build configuration list for PBXNativeTarget "FinatlonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				755B672F2945C26100356FAE /* Debug */,
+				755B67302945C26100356FAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 755B66FC2945C26000356FAE /* Project object */;
+}
