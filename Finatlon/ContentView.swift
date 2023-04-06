@@ -8,32 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var didLogin = false
-    
+    @State var CurrentScreen = 0
     var body: some View {
-            return Group {
-                if didLogin {
-                    MainView()
-                } else {
-                    LoginView(didLogin: $didLogin)
-                }
-                
-            }
+        switch CurrentScreen {
+        case 0:
+            LoginView(CurrentScreen: $CurrentScreen)
+        case 1:
+            MainView()
+        case 2:
+            RegisterView()
+        default:
+            LoginView(CurrentScreen: $CurrentScreen)
+        }
     }
 }
 
 struct LoginView: View {
     @State private var username: String = ""
     @State private var password: String = ""
-    @Binding var didLogin: Bool
+    @Binding var CurrentScreen: Int
     
     var body: some View {
         VStack(alignment: .center, spacing: 20.0) {
             Text("Финатлон").font(.title)
             TextField("Имя пользователя (email)", text: $username).textInputAutocapitalization(.never).disableAutocorrection(true)
             SecureField(text: $password, prompt: Text("Пароль")) {Text("пароль")}.textInputAutocapitalization(.never).disableAutocorrection(true)
-            Button("Войти", action: {self.didLogin = true}).buttonStyle(.borderedProminent)
-            Button("Зарегистрироваться", action: {self.didLogin = true})
+            Button("Войти", action: {self.CurrentScreen = 1}).buttonStyle(.borderedProminent)
+            Button("Зарегистрироваться", action: {self.CurrentScreen = 2})
         }.textFieldStyle(.roundedBorder)
             .padding()
     }
@@ -41,13 +42,30 @@ struct LoginView: View {
 
 struct MainView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Вы вошли в аккаунт")
     }
 }
 
-/*struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView(didLogin: $didLogin)
+struct RegisterView: View {
+    @State private var lastname: String = ""
+    @State private var givenname: String = ""
+    @State private var middlename: String = ""
+    @State private var password: String = ""
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Фамилия")
+            TextField("Фамилия", text: $lastname)
+            Text("Имя")
+            TextField("Имя", text: $givenname)
+            Text("Отчество")
+            TextField("Отчество", text: $middlename)
+        }.textFieldStyle(.roundedBorder)
+            .padding()
     }
 }
-*/
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
