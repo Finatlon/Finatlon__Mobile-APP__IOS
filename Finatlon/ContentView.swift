@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import iPhoneNumberField
 
 struct ContentView: View {
     @State var CurrentScreen = 0
@@ -16,7 +17,7 @@ struct ContentView: View {
         case 1:
             MainView()
         case 2:
-            RegisterView()
+            RegisterView(CurrentScreen: $CurrentScreen)
         default:
             LoginView(CurrentScreen: $CurrentScreen)
         }
@@ -47,20 +48,54 @@ struct MainView: View {
 }
 
 struct RegisterView: View {
+    @Binding var CurrentScreen: Int
     @State private var lastname: String = ""
     @State private var givenname: String = ""
     @State private var middlename: String = ""
     @State private var password: String = ""
+    @State private var dob: Date = Date.now
+    @State private var phone: String = ""
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Фамилия")
-            TextField("Фамилия", text: $lastname)
-            Text("Имя")
-            TextField("Имя", text: $givenname)
-            Text("Отчество")
-            TextField("Отчество", text: $middlename)
-        }.textFieldStyle(.roundedBorder)
-            .padding()
+        NavigationView {
+        VStack(alignment: .center, spacing: 20.0) {
+            //Text("Личные данные").font(.title)
+            VStack(alignment: .leading) {
+                Text("Фамилия")
+                TextField("Фамилия", text: $lastname)
+                Text("Имя")
+                TextField("Имя", text: $givenname)
+                Text("Отчество")
+                TextField("Отчество", text: $middlename)
+                DatePicker("Дата рождения", selection: $dob, displayedComponents: [.date])
+                Text("Телефон")
+                iPhoneNumberField(nil, text: $phone).defaultRegion("RU")
+                    .flagHidden(false)
+                    .flagSelectable(true)
+                    .prefixHidden(false)
+            }.textFieldStyle(.roundedBorder).padding()
+            HStack(alignment: .center) {
+                Button("Назад", action: {self.CurrentScreen = 0})
+                    .padding(.trailing)
+                            NavigationLink {
+                                Register2()
+                            } label: {
+                                Text("Далее")
+                            }.navigationTitle("Личные данные")
+                    .padding(.leading).buttonStyle(.borderedProminent)
+                        }
+            }
+        }
+    }
+}
+
+struct Register2: View {
+    var body: some View {
+        VStack(alignment: .center, spacing: 20.0) {
+            NavigationLink {
+                MainView()
+            } label: {Text("Далее")}
+            .navigationTitle("Место проживания")
+        }
     }
 }
 
