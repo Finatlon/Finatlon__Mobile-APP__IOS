@@ -9,7 +9,7 @@ import SwiftUI
 import iPhoneNumberField
 
 struct ContentView: View {
-    @State var CurrentScreen = 0
+    @State var CurrentScreen = 2
     var body: some View {
         switch CurrentScreen {
         case 0:
@@ -62,10 +62,11 @@ struct RegisterView: View {
             VStack(alignment: .leading) {
                 Text("Фамилия")
                 TextField("Фамилия", text: $lastname)
+                    .textContentType(.familyName)
                 Text("Имя")
-                TextField("Имя", text: $givenname)
+                TextField("Имя", text: $givenname).textContentType(.givenName)
                 Text("Отчество")
-                TextField("Отчество", text: $middlename)
+                TextField("Отчество", text: $middlename).textContentType(.familyName)
                 DatePicker("Дата рождения", selection: $dob, displayedComponents: [.date])
                 Text("Телефон")
                 iPhoneNumberField(nil, text: $phone).defaultRegion("RU")
@@ -89,13 +90,68 @@ struct RegisterView: View {
 }
 
 struct Register2: View {
+    @State private var coutry: String = ""
+    @State private var fed_district: String = ""
+    @State private var region: String = ""
+    @State private var postal_code: String = ""
     var body: some View {
-        VStack(alignment: .center, spacing: 20.0) {
-            NavigationLink {
-                MainView()
-            } label: {Text("Далее")}
-            .navigationTitle("Место проживания")
+        VStack(alignment: .leading, spacing: 20.0) {
+            HStack() {
+                Text("Страна")
+                Spacer()
+                Picker("", selection: $coutry) {
+                    Text("Россия").tag("Россия")
+                    Text("Не Россия").tag("Не Россия")
+                    Text("Юпитер").tag("Юпитер")
+                    Text("???").tag("???")
+                    Text("Парагвай").tag("Парагвай")
+                }
+            }
+            HStack() {
+                Text("Федеральный округ")
+                Spacer()
+                Picker("", selection: $fed_district) {
+                    Text("Центральный").tag("Центральный")
+                    Text("Не центральный").tag("Не центральный")
+                    Text("Плутон").tag("Плутон")
+                    Text("???").tag("???")
+                    Text("Где-то").tag("Где-то")
+                }
+            }
+            HStack() {
+                Text("Субъект РФ").padding(.trailing)
+                Spacer()
+                Picker("", selection: $region) {
+                    Text("Москва").tag("Москва")
+                    Text("Не Москва 😱").tag("Не Москва 😱")
+                    Text("Челябинская область").tag("Челябинская область")
+                    Text("???").tag("???")
+                    Text("Ханты-Мансийский Автономный Округ — Югра").tag("Ханты-Мансийский Автономный Округ — Югра")
+                }
+            }
+            Text("Почтовый индекс")
+            TextField("Почтовый индекс", text: $postal_code)
+                .textContentType(.postalCode)
+        }.textFieldStyle(.roundedBorder)
+        .padding()
+        NavigationLink {
+            Register3()
+        } label: {Text("Далее")}
+        .navigationTitle("Место проживания")
+        .buttonStyle(.borderedProminent)
+    }
+}
+
+struct Register3: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: 20.0) {
+            
         }
+        NavigationLink {
+            MainView()
+        } label: {Text("Далее")}
+        .navigationTitle("Место проживания")
+        .buttonStyle(.borderedProminent)
     }
 }
 
