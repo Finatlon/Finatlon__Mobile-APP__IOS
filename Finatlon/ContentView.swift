@@ -332,9 +332,29 @@ struct Register8: View {
 }
 
 struct Register9: View {
+    @State private var username: String = ""
+    @State private var password: String = ""
+    @State private var password_repeat: String = ""
+    @State private var role: String = ""
     var body: some View {
         VStack(alignment: .leading) {
-            
+            Text("Email")
+            TextField("Email", text: $username).textContentType(.emailAddress)
+            HStack() {
+                Text("Роль")
+                Spacer()
+                Picker("", selection: $role) {
+                    Text("Роль").tag("Роль")
+                    Text("Не").tag("Не")
+                    Text("знаю").tag("знаю")
+                    Text("какие").tag("какие")
+                    Text("роли").tag("роли")
+                }
+            }
+            Text("Пароль (не менее 6 символов)")
+            SecureField(text: $password, prompt: Text("Пароль")) {Text("пароль")}.textContentType(.password)
+            Text("Повторите пароль")
+            SecureField(text: $password_repeat, prompt: Text("Пароль")) {Text("пароль")}.textContentType(.password)
         }.textFieldStyle(.roundedBorder).padding()
         NavigationLink {
             MainView()
