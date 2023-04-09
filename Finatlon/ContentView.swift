@@ -9,7 +9,7 @@ import SwiftUI
 import iPhoneNumberField
 
 struct ContentView: View {
-    @State var CurrentScreen = 2
+    @State var CurrentScreen = 0
     var body: some View {
         switch CurrentScreen {
         case 0:
@@ -30,7 +30,7 @@ struct LoginView: View {
     @Binding var CurrentScreen: Int
     
     var body: some View {
-        VStack(alignment: .center, spacing: 20.0) {
+        VStack(alignment: .center) {
             Text("Финатлон").font(.title)
             TextField("Имя пользователя (email)", text: $username).textContentType(.emailAddress)
             SecureField(text: $password, prompt: Text("Пароль")) {Text("пароль")}.textContentType(.password)
@@ -57,7 +57,7 @@ struct RegisterView: View {
     @State private var phone: String = ""
     var body: some View {
         NavigationView {
-        VStack(alignment: .center, spacing: 20.0) {
+        VStack(alignment: .center) {
             //Text("Личные данные").font(.title)
             VStack(alignment: .leading) {
                 Text("Фамилия")
@@ -95,7 +95,7 @@ struct Register2: View {
     @State private var region: String = ""
     @State private var postal_code: String = ""
     var body: some View {
-        VStack(alignment: .leading, spacing: 20.0) {
+        VStack(alignment: .leading) {
             HStack() {
                 Text("Страна")
                 Spacer()
@@ -130,8 +130,7 @@ struct Register2: View {
                 }
             }
             Text("Почтовый индекс")
-            TextField("Почтовый индекс", text: $postal_code)
-                .textContentType(.postalCode)
+            TextField("Почтовый индекс", text: $postal_code).textContentType(.postalCode)
         }.textFieldStyle(.roundedBorder)
         .padding()
         NavigationLink {
@@ -150,7 +149,7 @@ struct Register3: View {
     @State private var apt: String = ""
     @State private var is_village: Bool = false
     var body: some View {
-        VStack(alignment: .leading, spacing: 20.0) {
+        VStack(alignment: .leading) {
             HStack() {
                 Text("Тип населённого пункта")
                 Spacer()
@@ -174,7 +173,7 @@ struct Register3: View {
             TextField("Улица", text: $str).textContentType(.addressCity)
             HStack() {
                 TextField("Дом", text: $bld).textContentType(.streetAddressLine1)
-                TextField("Квартира", text: $apt).textContentType(.streetAddressLine1)
+                TextField("Квартира", text: $apt).textContentType(.streetAddressLine2)
             }
             Toggle("Являюсь жителем сельской местности", isOn: $is_village)
         }.textFieldStyle(.roundedBorder).padding()
@@ -187,14 +186,72 @@ struct Register3: View {
 }
 
 struct Register4: View {
+    @State private var cls_year: Int = 0
+    @State private var school: String = ""
+    @State private var sch_phone: String = ""
+    @State private var sch_postal_code: String = ""
+    @State private var sch_country: String = ""
+    @State private var sch_str: String = ""
+    @State private var sch_bld: String = ""
+    @State private var sch_email: String = ""
     var body: some View {
-        VStack(alignment: .leading, spacing: 20.0) {
+        VStack(alignment: .leading) {
+            HStack() {
+                Text("Класс обучения")
+                Spacer()
+                Picker("", selection: $cls_year) {
+                    Text("2").tag(2)
+                    Text("3").tag(3)
+                    Text("4").tag(4)
+                    Text("5").tag(5)
+                    Text("6").tag(6)
+                    Text("7").tag(7)
+                    Text("8").tag(8)
+                    Text("9").tag(9)
+                    Text("10").tag(10)
+                    Text("11").tag(11)
+                }
+            }
+            Text("Телефон учреждения")
+            iPhoneNumberField(nil, text: $sch_phone).defaultRegion("RU")
+                .flagHidden(false)
+                .flagSelectable(true)
+                .prefixHidden(false)
+            Text("Адрес учреждения")
+            TextField("Почтовый индекс", text: $sch_postal_code).textContentType(.postalCode)
+            HStack() {
+                Text("Страна")
+                Spacer()
+                Picker("", selection: $sch_country) {
+                    Text("Россия").tag("Россия")
+                    Text("Не Россия").tag("Не Россия")
+                    Text("Юпитер").tag("Юпитер")
+                    Text("???").tag("???")
+                    Text("Парагвай").tag("Парагвай")
+                }
+            }
+            TextField("Улица", text: $sch_str).textContentType(.addressCity)
+            TextField("Дом", text: $sch_bld).textContentType(.streetAddressLine1)
+            Text("Email учреждения")
+            TextField("Email", text: $sch_email).textContentType(.emailAddress)
+        }.textFieldStyle(.roundedBorder).padding()
+        NavigationLink {
+            Register5()
+        } label: {Text("Далее")}
+        .navigationTitle("Место обучения")
+        .buttonStyle(.borderedProminent)
+    }
+}
+
+struct Register5: View {
+    var body: some View {
+        VStack(alignment: .leading) {
             
         }.textFieldStyle(.roundedBorder).padding()
         NavigationLink {
             MainView()
         } label: {Text("Далее")}
-        .navigationTitle("Место проживания")
+        .navigationTitle("Дополнительно")
         .buttonStyle(.borderedProminent)
     }
 }
