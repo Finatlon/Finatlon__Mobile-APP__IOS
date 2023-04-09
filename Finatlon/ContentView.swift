@@ -30,7 +30,7 @@ struct LoginView: View {
     @Binding var CurrentScreen: Int
     
     var body: some View {
-        VStack(alignment: .center) {
+        VStack(alignment: .center, spacing: 20.0) {
             Text("Финатлон").font(.title)
             TextField("Имя пользователя (email)", text: $username).textContentType(.emailAddress)
             SecureField(text: $password, prompt: Text("Пароль")) {Text("пароль")}.textContentType(.password)
@@ -244,6 +244,25 @@ struct Register4: View {
 }
 
 struct Register5: View {
+    @State private var is_orphan: Bool = false
+    @State private var is_disabled: Bool = false
+    @State private var movements: String = ""
+    var body: some View {
+        VStack(alignment: .leading) {
+            Toggle("Имею статус ребёнка-сироты", isOn: $is_orphan)
+            Toggle("Являюсь лицом с ограниченными возможностями здоровья", isOn: $is_disabled)
+            Text("Членство в детско-юношеских организациях, движениях и пр.")
+            TextField("Наименование", text: $movements)
+        }.textFieldStyle(.roundedBorder).padding()
+        NavigationLink {
+            Register6()
+        } label: {Text("Далее")}
+        .navigationTitle("Дополнительно")
+        .buttonStyle(.borderedProminent)
+    }
+}
+
+struct Register6: View {
     var body: some View {
         VStack(alignment: .leading) {
             
@@ -251,7 +270,7 @@ struct Register5: View {
         NavigationLink {
             MainView()
         } label: {Text("Далее")}
-        .navigationTitle("Дополнительно")
+        .navigationTitle("Об олимпиаде")
         .buttonStyle(.borderedProminent)
     }
 }
