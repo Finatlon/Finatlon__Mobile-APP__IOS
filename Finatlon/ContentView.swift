@@ -252,7 +252,7 @@ struct Register5: View {
             Toggle("Имею статус ребёнка-сироты", isOn: $is_orphan)
             Toggle("Являюсь лицом с ограниченными возможностями здоровья", isOn: $is_disabled)
             Text("Членство в детско-юношеских организациях, движениях и пр.")
-            TextField("Наименование", text: $movements)
+            TextField("Наименование (необязательно)", text: $movements)
         }.textFieldStyle(.roundedBorder).padding()
         NavigationLink {
             Register6()
@@ -263,6 +263,27 @@ struct Register5: View {
 }
 
 struct Register6: View {
+    @State private var why: String = ""
+    @State private var what: String = ""
+    @State private var info_source: String = ""
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Чем вызвано мое решение принять участие в олимпиаде?")
+            TextField("Необязательно", text: $why)
+            Text("Почему меня интересует сфера финансов?")
+            TextField("Необязательно", text: $what)
+            Text("Источник информации об олимпиаде")
+            TextField("Необязательно", text: $info_source)
+        }.textFieldStyle(.roundedBorder).padding()
+        NavigationLink {
+            Register7()
+        } label: {Text("Далее")}
+        .navigationTitle("Об олимпиаде")
+        .buttonStyle(.borderedProminent)
+    }
+}
+
+struct Register7: View {
     var body: some View {
         VStack(alignment: .leading) {
             
@@ -270,7 +291,7 @@ struct Register6: View {
         NavigationLink {
             MainView()
         } label: {Text("Далее")}
-        .navigationTitle("Об олимпиаде")
+        .navigationTitle("Родители/опекуны")
         .buttonStyle(.borderedProminent)
     }
 }
