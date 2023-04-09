@@ -308,6 +308,30 @@ struct Register7: View {
 }
 
 struct Register8: View {
+    @State private var teacher_name: String = ""
+    @State private var teacher_email: String = ""
+    @State private var teacher_phone: String = ""
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("ФИО учителя")
+            TextField("ФИО", text: $teacher_name).textContentType(.middleName)
+            Text("Email учителя")
+            TextField("Email", text: $teacher_email).textContentType(.emailAddress)
+            Text("Телефон учителя")
+            iPhoneNumberField(nil, text: $teacher_phone).defaultRegion("RU")
+                .flagHidden(false)
+                .flagSelectable(true)
+                .prefixHidden(false)
+        }.textFieldStyle(.roundedBorder).padding()
+        NavigationLink {
+            Register9()
+        } label: {Text("Далее")}
+        .navigationTitle("Учитель")
+        .buttonStyle(.borderedProminent)
+    }
+}
+
+struct Register9: View {
     var body: some View {
         VStack(alignment: .leading) {
             
@@ -315,7 +339,7 @@ struct Register8: View {
         NavigationLink {
             MainView()
         } label: {Text("Далее")}
-        .navigationTitle("Родители/опекуны")
+        .navigationTitle("Данные для входа")
         .buttonStyle(.borderedProminent)
     }
 }
