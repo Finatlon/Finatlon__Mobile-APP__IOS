@@ -66,7 +66,7 @@ struct RegisterView: View {
                 Text("Имя")
                 TextField("Имя", text: $givenname).textContentType(.givenName)
                 Text("Отчество")
-                TextField("Отчество", text: $middlename).textContentType(.familyName)
+                TextField("Отчество", text: $middlename).textContentType(.middleName)
                 DatePicker("Дата рождения", selection: $dob, displayedComponents: [.date])
                 Text("Телефон")
                 iPhoneNumberField(nil, text: $phone).defaultRegion("RU")
@@ -284,6 +284,30 @@ struct Register6: View {
 }
 
 struct Register7: View {
+    @State private var parent_name: String = ""
+    @State private var parent_email: String = ""
+    @State private var parent_phone: String = ""
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("ФИО одного из родителей/опекуна")
+            TextField("ФИО", text: $parent_name).textContentType(.middleName)
+            Text("Email одного из родителей/опекуна")
+            TextField("Email", text: $parent_email).textContentType(.emailAddress)
+            Text("Телефон одного из родителей/опекуна")
+            iPhoneNumberField(nil, text: $parent_phone).defaultRegion("RU")
+                .flagHidden(false)
+                .flagSelectable(true)
+                .prefixHidden(false)
+        }.textFieldStyle(.roundedBorder).padding()
+        NavigationLink {
+            Register8()
+        } label: {Text("Далее")}
+        .navigationTitle("Родители/опекуны")
+        .buttonStyle(.borderedProminent)
+    }
+}
+
+struct Register8: View {
     var body: some View {
         VStack(alignment: .leading) {
             
