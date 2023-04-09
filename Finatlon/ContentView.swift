@@ -32,8 +32,8 @@ struct LoginView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 20.0) {
             Text("Финатлон").font(.title)
-            TextField("Имя пользователя (email)", text: $username).textInputAutocapitalization(.never).disableAutocorrection(true)
-            SecureField(text: $password, prompt: Text("Пароль")) {Text("пароль")}.textInputAutocapitalization(.never).disableAutocorrection(true)
+            TextField("Имя пользователя (email)", text: $username).textContentType(.emailAddress)
+            SecureField(text: $password, prompt: Text("Пароль")) {Text("пароль")}.textContentType(.password)
             Button("Войти", action: {self.CurrentScreen = 1}).buttonStyle(.borderedProminent)
             Button("Зарегистрироваться", action: {self.CurrentScreen = 2})
         }.textFieldStyle(.roundedBorder)
@@ -143,10 +143,54 @@ struct Register2: View {
 }
 
 struct Register3: View {
+    @State private var town_type: String = ""
+    @State private var town: String = ""
+    @State private var str: String = ""
+    @State private var bld: String = ""
+    @State private var apt: String = ""
+    @State private var is_village: Bool = false
+    var body: some View {
+        VStack(alignment: .leading, spacing: 20.0) {
+            HStack() {
+                Text("Тип населённого пункта")
+                Spacer()
+                Picker("", selection: $town_type) {
+                    Text("Город").tag("Город")
+                    Text("ПГТ").tag("ПГТ")
+                    Text("???").tag("???")
+                }
+            }
+            HStack() {
+                Text("Населённый пункт")
+                Spacer()
+                Picker("", selection: $town) {
+                    Text("Москва").tag("Москва")
+                    Text("Город").tag("Город")
+                    Text("Другой город").tag("Другой город")
+                    Text("Город N").tag("Город N")
+                }
+            }
+            Text("Адрес места жительства")
+            TextField("Улица", text: $str).textContentType(.addressCity)
+            HStack() {
+                TextField("Дом", text: $bld).textContentType(.streetAddressLine1)
+                TextField("Квартира", text: $apt).textContentType(.streetAddressLine1)
+            }
+            Toggle("Являюсь жителем сельской местности", isOn: $is_village)
+        }.textFieldStyle(.roundedBorder).padding()
+        NavigationLink {
+            Register4()
+        } label: {Text("Далее")}
+        .navigationTitle("Место проживания")
+        .buttonStyle(.borderedProminent)
+    }
+}
+
+struct Register4: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20.0) {
             
-        }
+        }.textFieldStyle(.roundedBorder).padding()
         NavigationLink {
             MainView()
         } label: {Text("Далее")}
