@@ -1,2 +1,1 @@
-# finatlon-app
-Finatlon app for iOS
+Finatlon mobile app repo
