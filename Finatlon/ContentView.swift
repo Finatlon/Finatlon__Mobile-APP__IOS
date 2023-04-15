@@ -43,7 +43,20 @@ struct LoginView: View {
 
 struct MainView: View {
     var body: some View {
-        Text("Вы вошли в аккаунт")
+        TabView {
+            NewsView()
+                .tabItem {
+                    Label("Новости", systemImage: "newspaper")
+                }
+            TaskView()
+                .tabItem {
+                    Label("Олимпиада", systemImage: "checklist")
+                }
+            AccountView()
+                .tabItem {
+                    Label("Аккаунт", systemImage: "person.crop.circle")
+                }
+        }
     }
 }
 
@@ -78,7 +91,7 @@ struct RegisterView: View {
                 Button("Назад", action: {self.CurrentScreen = 0})
                     .padding(.trailing)
                             NavigationLink {
-                                Register2()
+                                Register2(CurrentScreen: self.$CurrentScreen)
                             } label: {
                                 Text("Далее")
                             }.navigationTitle("Личные данные")
@@ -90,6 +103,7 @@ struct RegisterView: View {
 }
 
 struct Register2: View {
+    @Binding var CurrentScreen: Int
     @State private var coutry: String = ""
     @State private var fed_district: String = ""
     @State private var region: String = ""
@@ -134,7 +148,7 @@ struct Register2: View {
         }.textFieldStyle(.roundedBorder)
         .padding()
         NavigationLink {
-            Register3()
+            Register3(CurrentScreen: self.$CurrentScreen)
         } label: {Text("Далее")}
         .navigationTitle("Место проживания")
         .buttonStyle(.borderedProminent)
@@ -142,6 +156,7 @@ struct Register2: View {
 }
 
 struct Register3: View {
+    @Binding var CurrentScreen: Int
     @State private var town_type: String = ""
     @State private var town: String = ""
     @State private var str: String = ""
@@ -178,7 +193,7 @@ struct Register3: View {
             Toggle("Являюсь жителем сельской местности", isOn: $is_village)
         }.textFieldStyle(.roundedBorder).padding()
         NavigationLink {
-            Register4()
+            Register4(CurrentScreen: self.$CurrentScreen)
         } label: {Text("Далее")}
         .navigationTitle("Место проживания")
         .buttonStyle(.borderedProminent)
@@ -186,6 +201,7 @@ struct Register3: View {
 }
 
 struct Register4: View {
+    @Binding var CurrentScreen: Int
     @State private var cls_year: Int = 0
     @State private var school: String = ""
     @State private var sch_phone: String = ""
@@ -236,7 +252,7 @@ struct Register4: View {
             TextField("Email", text: $sch_email).textContentType(.emailAddress)
         }.textFieldStyle(.roundedBorder).padding()
         NavigationLink {
-            Register5()
+            Register5(CurrentScreen: self.$CurrentScreen)
         } label: {Text("Далее")}
         .navigationTitle("Место обучения")
         .buttonStyle(.borderedProminent)
@@ -244,6 +260,7 @@ struct Register4: View {
 }
 
 struct Register5: View {
+    @Binding var CurrentScreen: Int
     @State private var is_orphan: Bool = false
     @State private var is_disabled: Bool = false
     @State private var movements: String = ""
@@ -255,7 +272,7 @@ struct Register5: View {
             TextField("Наименование (необязательно)", text: $movements)
         }.textFieldStyle(.roundedBorder).padding()
         NavigationLink {
-            Register6()
+            Register6(CurrentScreen: self.$CurrentScreen)
         } label: {Text("Далее")}
         .navigationTitle("Дополнительно")
         .buttonStyle(.borderedProminent)
@@ -263,6 +280,7 @@ struct Register5: View {
 }
 
 struct Register6: View {
+    @Binding var CurrentScreen: Int
     @State private var why: String = ""
     @State private var what: String = ""
     @State private var info_source: String = ""
@@ -276,7 +294,7 @@ struct Register6: View {
             TextField("Необязательно", text: $info_source)
         }.textFieldStyle(.roundedBorder).padding()
         NavigationLink {
-            Register7()
+            Register7(CurrentScreen: self.$CurrentScreen)
         } label: {Text("Далее")}
         .navigationTitle("Об олимпиаде")
         .buttonStyle(.borderedProminent)
@@ -284,6 +302,7 @@ struct Register6: View {
 }
 
 struct Register7: View {
+    @Binding var CurrentScreen: Int
     @State private var parent_name: String = ""
     @State private var parent_email: String = ""
     @State private var parent_phone: String = ""
@@ -300,7 +319,7 @@ struct Register7: View {
                 .prefixHidden(false)
         }.textFieldStyle(.roundedBorder).padding()
         NavigationLink {
-            Register8()
+            Register8(CurrentScreen: self.$CurrentScreen)
         } label: {Text("Далее")}
         .navigationTitle("Родители/опекуны")
         .buttonStyle(.borderedProminent)
@@ -308,6 +327,7 @@ struct Register7: View {
 }
 
 struct Register8: View {
+    @Binding var CurrentScreen: Int
     @State private var teacher_name: String = ""
     @State private var teacher_email: String = ""
     @State private var teacher_phone: String = ""
@@ -324,7 +344,7 @@ struct Register8: View {
                 .prefixHidden(false)
         }.textFieldStyle(.roundedBorder).padding()
         NavigationLink {
-            Register9()
+            Register9(CurrentScreen: self.$CurrentScreen)
         } label: {Text("Далее")}
         .navigationTitle("Учитель")
         .buttonStyle(.borderedProminent)
@@ -332,6 +352,7 @@ struct Register8: View {
 }
 
 struct Register9: View {
+    @Binding var CurrentScreen: Int
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var password_repeat: String = ""
@@ -357,10 +378,45 @@ struct Register9: View {
             SecureField(text: $password_repeat, prompt: Text("Пароль")) {Text("пароль")}.textContentType(.password)
         }.textFieldStyle(.roundedBorder).padding()
         NavigationLink {
-            MainView()
+            RegisterSuccess(CurrentScreen: self.$CurrentScreen)
         } label: {Text("Далее")}
         .navigationTitle("Данные для входа")
         .buttonStyle(.borderedProminent)
+    }
+}
+
+struct RegisterSuccess: View {
+    @Binding var CurrentScreen: Int
+    var body: some View {
+        VStack(spacing: 25.0) {
+            Image(systemName: "person.fill.checkmark")
+            Text("Вы зарегистрированы!")
+            Button("Войти", action: {self.CurrentScreen = 0}).buttonStyle(.borderedProminent)
+        }
+    }
+}
+
+struct NewsView: View {
+    var body: some View {
+        VStack(alignment: .center) {
+            Text("Здесь будут новости")
+        }
+    }
+}
+
+struct TaskView: View {
+    var body: some View {
+        VStack(alignment: .center) {
+            Text("Здесь будут задания олимпиады")
+        }
+    }
+}
+
+struct AccountView: View {
+    var body: some View {
+        VStack(alignment: .center) {
+            Text("Здесь будет аккаунт")
+        }
     }
 }
 
