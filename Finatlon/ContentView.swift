@@ -15,7 +15,7 @@ struct ContentView: View {
         case 0:
             LoginView(CurrentScreen: $CurrentScreen)
         case 1:
-            MainView()
+            MainView(CurrentScreen: $CurrentScreen)
         case 2:
             RegisterView(CurrentScreen: $CurrentScreen)
         default:
@@ -42,6 +42,7 @@ struct LoginView: View {
 }
 
 struct MainView: View {
+    @Binding var CurrentScreen: Int
     var body: some View {
         TabView {
             NewsView()
@@ -52,7 +53,7 @@ struct MainView: View {
                 .tabItem {
                     Label("Олимпиада", systemImage: "checklist")
                 }
-            AccountView()
+            AccountView(CurrentScreen: self.$CurrentScreen)
                 .tabItem {
                     Label("Аккаунт", systemImage: "person.crop.circle")
                 }
@@ -413,9 +414,32 @@ struct TaskView: View {
 }
 
 struct AccountView: View {
+    @Binding var CurrentScreen: Int
+    @State private var selection: String?
     var body: some View {
         VStack(alignment: .center) {
-            Text("Здесь будет аккаунт")
+            HStack {
+                Image(systemName: "person")
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 50.0, height: 50.0)
+                VStack(alignment: .leading) {
+                    Text(verbatim: "Имя Фамилия")
+                    Text(verbatim: "example@example.com")
+                }
+            }
+            List(selection: $selection) {
+                Text("Личные данные")
+                Text("Результаты олимпиады")
+                Text("Апелляция результатов")
+                Text("Контактная информация")
+                Text("Отзывы и предложения")
+                Text("Помощь")
+                Text("Выйти из аккаунта")
+                    .foregroundColor(Color.red)
+                    .onTapGesture {
+                        CurrentScreen = 0
+                    }
+            }
         }
     }
 }
