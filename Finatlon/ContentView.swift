@@ -217,16 +217,16 @@ struct Register4: View {
                 Text("Класс обучения")
                 Spacer()
                 Picker("", selection: $cls_year) {
-                    Text("2").tag(2)
-                    Text("3").tag(3)
-                    Text("4").tag(4)
-                    Text("5").tag(5)
                     Text("6").tag(6)
                     Text("7").tag(7)
                     Text("8").tag(8)
                     Text("9").tag(9)
                     Text("10").tag(10)
                     Text("11").tag(11)
+                    Text("1 курс").tag(1)
+                    Text("2 курс").tag(2)
+                    Text("3 курс").tag(3)
+                    Text("4 курс").tag(4)
                 }
             }
             Text("Телефон учреждения")
@@ -366,11 +366,10 @@ struct Register9: View {
                 Text("Роль")
                 Spacer()
                 Picker("", selection: $role) {
-                    Text("Роль").tag("Роль")
-                    Text("Не").tag("Не")
-                    Text("знаю").tag("знаю")
-                    Text("какие").tag("какие")
-                    Text("роли").tag("роли")
+                    Text("Школьник").tag("Школьник")
+                    Text("Студент СПО").tag("Студент СПО")
+                    Text("Студент ВУЗа").tag("Студент ВУЗа")
+                    Text("Другое").tag("Другое")
                 }
             }
             Text("Пароль (не менее 6 символов)")
@@ -427,19 +426,104 @@ struct AccountView: View {
                     Text(verbatim: "example@example.com")
                 }
             }
-            List(selection: $selection) {
-                Text("Личные данные")
-                Text("Результаты олимпиады")
-                Text("Апелляция результатов")
-                Text("Контактная информация")
-                Text("Отзывы и предложения")
-                Text("Помощь")
-                Text("Выйти из аккаунта")
-                    .foregroundColor(Color.red)
-                    .onTapGesture {
-                        CurrentScreen = 0
+            NavigationView {
+                List(selection: $selection) {
+                    NavigationLink {
+                        PersonalInfo()
+                    } label: {
+                        Text("Личные данные")
                     }
+                    NavigationLink {
+                        OlympResults()
+                    } label: {
+                        Text("Результаты олимпиады")
+                    }
+                    NavigationLink {
+                        ResultsAppeal()
+                    } label: {
+                    Text("Апелляция результатов")
+                    }
+                    NavigationLink {
+                        Contacts()
+                    } label: {
+                        Text("Контактная информация")
+                    }
+                    NavigationLink {
+                        Suggestions()
+                    } label: {
+                        Text("Отзывы и предложения")
+                    }
+                    Text("Помощь")
+                    Text("Выйти из аккаунта")
+                        .foregroundColor(Color.red)
+                        .onTapGesture {
+                            CurrentScreen = 0
+                        }
+                }
             }
+        }
+    }
+}
+
+struct PersonalInfo: View {
+    var body: some View {
+        VStack(alignment: .center) {
+            
+        }
+    }
+}
+
+struct OlympResults: View {
+    var body: some View {
+        VStack(alignment: .center) {
+            Text("После проведения олимпиады здесь будут результаты")
+                .multilineTextAlignment(.center)
+        }
+    }
+}
+
+struct ResultsAppeal: View {
+    var body: some View {
+        VStack(alignment: .center) {
+            Text("После проведения олимпиады здесь можно аппелировать результаты")
+                .multilineTextAlignment(.center)
+        }
+    }
+}
+
+struct Contacts: View {
+    var body: some View {
+        VStack(alignment: .center) {
+            Link(destination: URL(string: "tel:+74953690402,5")!) {
+                Text("📞 +74953690402 доб. 5")
+                    .accentColor(Color.white)
+                    .padding()
+                    .background(.green)
+                    .font(.headline)
+            }
+            Link(destination: URL(string: "mailto:olimpiada@ifru.ru")!) {
+                Text("✉️ olimpiada@ifru.ru")
+                    .accentColor(Color.white)
+                    .padding()
+                    .background(.blue)
+                    .font(.headline)
+            }
+        }
+    }
+}
+
+struct Suggestions: View {
+    @State private var selection: String?
+    @State private var review: String = ""
+    var body: some View {
+        VStack(alignment: .center) {
+            Picker("", selection: $selection) {
+                Text("Отзыв об олимпиаде").tag("Отзыв об олимпиаде")
+                Text("Отзыв о приложении").tag("Отзыв о приложении")
+                Text("Другое").tag("Другое")
+            }
+            TextEditor(text: $review)
+            Button("Отправить", action: {}).buttonStyle(.borderedProminent)
         }
     }
 }
