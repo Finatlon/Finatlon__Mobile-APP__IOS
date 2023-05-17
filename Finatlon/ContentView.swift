@@ -6,7 +6,22 @@
 //
 
 import SwiftUI
+import WebKit
 import iPhoneNumberField
+
+struct WebView: UIViewRepresentable {
+ 
+    var url: URL
+ 
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+ 
+    func updateUIView(_ webView: WKWebView, context: Context) {
+        let request = URLRequest(url: url)
+        webView.load(request)
+    }
+}
 
 struct ContentView: View {
     @State var CurrentScreen = 0
@@ -453,7 +468,11 @@ struct AccountView: View {
                     } label: {
                         Text("Отзывы и предложения")
                     }
-                    Text("Помощь")
+                    NavigationLink {
+                        HelpView()
+                    } label: {
+                        Text("Помощь")
+                    }
                     Text("Выйти из аккаунта")
                         .foregroundColor(Color.red)
                         .onTapGesture {
@@ -525,6 +544,12 @@ struct Suggestions: View {
             TextEditor(text: $review)
             Button("Отправить", action: {}).buttonStyle(.borderedProminent)
         }
+    }
+}
+
+struct HelpView: View {
+    var body: some View {
+        WebView(url: URL(string: "https://ya.ru/")!) //Для теста
     }
 }
 
