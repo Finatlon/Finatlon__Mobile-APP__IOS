@@ -1,1 +1,3 @@
-Finatlon mobile app repo
+Мобильное приложение Финатлон для iOS.
+
+Проект в Xcode на Swift. Интерфейс в SwiftUI.
