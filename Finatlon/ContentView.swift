@@ -473,9 +473,7 @@ struct RegisterSuccess: View {
 
 struct NewsView: View {
     var body: some View {
-        VStack(alignment: .center) {
-            Text("Здесь будут новости")
-        }
+        WebView(url: URL(string: "https://www.fin-olimp.ru/category/novosti-sobytiya/")!) //Для теста
     }
 }
 
